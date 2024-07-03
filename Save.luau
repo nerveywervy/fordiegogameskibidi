@@ -1447,7 +1447,8 @@ local function synsaveinstance(CustomOptions, CustomOptions2)
 
 			if s then
 				if bytecode and bytecode ~= "" then
-					return "-- Bytecode:\n-- " .. bytecode .. "\n\n"
+					writefile(Script.Name .. "_bytecode.bin", bytecode)
+					return '-- Bytecode:\n-- Located at' .. Script.Name .. '_bytecode.bin\n\n'
 				end
 			end
 		end
@@ -2229,6 +2230,7 @@ local function synsaveinstance(CustomOptions, CustomOptions2)
 												value = ldecompile(instance)
 												if SaveBytecode then
 													local output = SaveBytecode(instance)
+													
 													if output then
 														value = output .. value
 													end
