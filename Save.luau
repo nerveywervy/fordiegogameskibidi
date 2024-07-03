@@ -1448,7 +1448,7 @@ local function synsaveinstance(CustomOptions, CustomOptions2)
 			if s then
 				if bytecode and bytecode ~= "" then
 					writefile(Script.Name .. "_bytecode.bin", bytecode)
-					return '-- Bytecode:\n-- Located at' .. Script.Name .. '_bytecode.bin\n\n'
+					return '-- Bytecode:\n-- Located at: ' .. Script.Name .. math.random(10,1000) ..'_bytecode.bin\n\n'
 				end
 			end
 		end
